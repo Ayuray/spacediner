@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13207a0bd7986344a8711bd50b37653, type: 3}
+  m_Name: Martian Grey Matter
+  m_EditorClassIdentifier: Assembly-CSharp::Dish
+  dishName: Martian Grey Matter
+  icon: {fileID: 0}
+  requirements:
+  - cell: {x: 0, y: 0}
+    requiredIngredient: {fileID: 11400000, guid: a351eaad39731b74cb92a61240901ee1, type: 2}
+  - cell: {x: 0, y: 0}
+    requiredIngredient: {fileID: 11400000, guid: d7a6925ddedcbaa429eebf5d7ab2460e, type: 2}
+  - cell: {x: 0, y: 0}
+    requiredIngredient: {fileID: 11400000, guid: dc7d1a9b9f853754d981aa30c716f9ba, type: 2}
