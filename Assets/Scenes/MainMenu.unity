@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 1178485448}
   - component: {fileID: 1178485447}
   m_Layer: 5
-  m_Name: OPTIONS
+  m_Name: VOLUME
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -807,10 +807,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1956984838}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.095000006, y: 0}
-  m_AnchorMax: {x: 0.92800003, y: 1}
-  m_AnchoredPosition: {x: -10.5, y: -0.0000019073486}
-  m_SizeDelta: {x: -4.249901, y: -0.0000038146973}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 7.7, y: -0.0000019073486}
+  m_SizeDelta: {x: -26.2499, y: -0.0000038146973}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1178485447
 MonoBehaviour:
@@ -832,7 +832,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OPTIONS
+  m_text: VOLUME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -898,7 +898,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -11.190685, y: 1.6749115, z: -27.448574, w: 1.6149902}
+  m_margin: {x: -19.534336, y: 1.6749115, z: -6.808964, w: 1.6149902}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1256,8 +1256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50.223, y: 14.521}
-  m_SizeDelta: {x: 147.1219, y: 29.043}
+  m_AnchoredPosition: {x: 50.6, y: 14.521}
+  m_SizeDelta: {x: 131.752, y: 29.043}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956984839
 MonoBehaviour:
