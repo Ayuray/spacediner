@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 437, y: -210}
-  m_SizeDelta: {x: 320, y: 320}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4668181281405935984
 CanvasRenderer:
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 23881c7546dbbe74e87e512396e838f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5aebc36777438494b99476a133a10a1e, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28acf1d99b39eda44ba6c2eddf7b8d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemGrid
-  gridSizeWidth: 5
-  gridSizeHeight: 5
+  gridSizeWidth: 3
+  gridSizeHeight: 3
 --- !u!114 &6261326171951581831
 MonoBehaviour:
   m_ObjectHideFlags: 0

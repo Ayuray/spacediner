@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ItemGrid : MonoBehaviour
 {
-    public const int tileSizeWidth = 32;
-    public const int tileSizeHeight = 32;
+    public const int tileSizeWidth = 100;
+    public const int tileSizeHeight = 100;
 
     InventoryItem[,] inventoryItemSlot;
 
