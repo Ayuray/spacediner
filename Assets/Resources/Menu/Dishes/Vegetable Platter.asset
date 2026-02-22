@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f13207a0bd7986344a8711bd50b37653, type: 3}
-  m_Name: Fries
+  m_Name: Vegetable Platter
   m_EditorClassIdentifier: Assembly-CSharp::Dish
-  dishName: Fries
-  icon: {fileID: 21300000, guid: 99a512d3abb0ec044825d36e1e76ca4f, type: 3}
+  dishName: Vegetable Platter
+  icon: {fileID: 21300000, guid: 8cf48f6afbdf7cb4a87479d7e0d75a51, type: 3}
   pickWeight: 1
   requirements:
   - score: -1
     requiredIngredient: {fileID: 11400000, guid: 07962f9cee4d64d428009344b80987bf, type: 2}
-  - score: 1
+  - score: -1
     requiredIngredient: {fileID: 11400000, guid: 74fabec8fbd64ec4ea74083d8d87c7d8, type: 2}
-  - score: 1
+  - score: 0
     requiredIngredient: {fileID: 11400000, guid: a475387104e5dfc41b49567b0ed50275, type: 2}
-  - score: 0
+  - score: 1
     requiredIngredient: {fileID: 11400000, guid: 903e6ed8fbb2e8643a722ca0b47d24d9, type: 2}
-  - score: -1
+  - score: 1
     requiredIngredient: {fileID: 11400000, guid: 99e63513495b4874c9ef68ca341c03aa, type: 2}
-  - score: 0
-    requiredIngredient: {fileID: 11400000, guid: 97cbd2efe7d18c24c9717c98f663b668, type: 2}
   - score: -1
+    requiredIngredient: {fileID: 11400000, guid: 97cbd2efe7d18c24c9717c98f663b668, type: 2}
+  - score: 0
     requiredIngredient: {fileID: 11400000, guid: 97fe2010ec1e675439e47cf3c210065d, type: 2}
   - score: 1
     requiredIngredient: {fileID: 11400000, guid: b08e94f0a6f25764bbbb76ccab910f20, type: 2}

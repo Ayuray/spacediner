@@ -15,6 +15,6 @@ public class Dish : ScriptableObject
 [System.Serializable]
 public class CellRequirement
 {
-    public Vector2Int cell;
-    public Ingredient requiredIngredient;
+    public int score; // 1 = good, 0 = neutral, -1 = bad
+    public ItemData requiredIngredient;
 }

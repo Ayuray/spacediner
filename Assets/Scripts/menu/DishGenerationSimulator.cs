@@ -72,9 +72,9 @@ public class SystemSimulation : MonoBehaviour
                     continue;
                 }
 
-                Debug.Log(
+                /*Debug.Log(
                     "Required Ingredients: " + req.requiredIngredient.ingredientName
-                );
+                );*/
             }
         }
 
