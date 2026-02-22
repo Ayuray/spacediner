@@ -1,10 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 
 public class DishSystem : MonoBehaviour
 {
     [SerializeField] GameObject orderReference;
+
+    public static event Action OnOrderEnd;
+
+    private void OnEnable()
+    {
+        WaitingQueue.OnOrderStart += StartOrder;
+    }
+
+    private void OnDisable()
+    {
+        WaitingQueue.OnOrderStart -= StartOrder;
+    }
 
     private void Start()
     {
@@ -14,12 +27,14 @@ public class DishSystem : MonoBehaviour
     public void StartOrder()
     {
         Dish dish = GetComponent<DishGenerator>().GenerateDish();
-        if (dish == null)
-        {
-            Debug.Log("test");
-        }
         orderReference.SetActive(true);
-        Debug.Log(dish.dishName);
         orderReference.GetComponent<Image>().sprite = dish.icon;
+    }
+
+    public void EndOrder()
+    {
+        orderReference.SetActive(false);
+
+        OnOrderEnd?.Invoke();
     }
 }

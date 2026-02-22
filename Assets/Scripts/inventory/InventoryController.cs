@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class InventoryController : MonoBehaviour
@@ -35,6 +36,8 @@ public class InventoryController : MonoBehaviour
     [SerializeField] GameObject itemPrefab;
     [SerializeField] Transform canvasTransform;
     [SerializeField] GameObject mainItemGrid;
+    [SerializeField] DishSystem dishSystem;
+    [SerializeField] Text text;
 
     private void Awake()
     {
@@ -210,5 +213,7 @@ public class InventoryController : MonoBehaviour
 
             }
         }
+
+        dishSystem.EndOrder();
     }
 }
