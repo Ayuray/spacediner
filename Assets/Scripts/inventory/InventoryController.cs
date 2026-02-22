@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEditor.ShaderGraph.Internal;
+using UnityEngine.Networking;
 using System;
 
 public class InventoryController : MonoBehaviour
@@ -42,6 +44,7 @@ public class InventoryController : MonoBehaviour
     [SerializeField] Transform canvasTransform;
     [SerializeField] GameObject mainItemGrid;
     [SerializeField] DishSystem dishSystem;
+    [SerializeField] DishGenerator dishList;
     [SerializeField] Text text;
 
     private void Awake()
@@ -101,7 +104,7 @@ public class InventoryController : MonoBehaviour
         int selectedItemID = UnityEngine.Random.Range(0, items.Count);
         inventoryItem.SetItem(items[selectedItemID]);
 
-        gridToInsert.PlaceItem(inventoryItem, 2, 2);
+        gridToInsert.PlaceItem(inventoryItem, 1, 1);
     }
 
     private void RotateItem()
@@ -213,18 +216,42 @@ public class InventoryController : MonoBehaviour
     public void SendIt()
     {
         int score = 0;
+
         foreach (Transform child in mainItemGrid.transform)
         {
+
             if (!child.CompareTag("Highlighter"))
             {
-                Debug.Log(child.gameObject.name);
+                //ItemData item = child.GetComponent<ItemData>();
+                //Dish dish = dishSystem.GetCurrentOrder();
+                //
+                //List<Dish> dishList = this.dishList.ReturnDishList();
+                //
+                //
+                //
+                //foreach (Dish dsh in dishList)
+                //{
+                //    if (dsh == dish)
+                //    {
+                //        foreach(CellRequirement ing in dsh.requirements)
+                //        {
+                //            score += ing.score;
+                //        }
+                //    }
+                //}
+
                 Destroy(child.gameObject);
 
                 score++;
             }
         }
 
-        text.text = "Score: " + (score * 10);
+        if (score == 0)
+        {
+            return;
+        }
+
+        text.text = "SCORE: " + (score * 10);
         dishSystem.EndOrder();
     }
 }

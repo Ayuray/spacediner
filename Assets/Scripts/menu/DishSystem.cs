@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class DishSystem : MonoBehaviour
     [SerializeField] GameObject orderReference;
 
     public static event Action OnOrderEnd;
+
+    Dish dish;
 
     private void OnEnable()
     {
@@ -22,13 +25,17 @@ public class DishSystem : MonoBehaviour
     private void Start()
     {
         orderReference.SetActive(false);
-        StartOrder();
     }
     public void StartOrder()
     {
-        Dish dish = GetComponent<DishGenerator>().GenerateDish();
+        dish = GetComponent<DishGenerator>().GenerateDish();
         orderReference.SetActive(true);
         orderReference.GetComponent<Image>().sprite = dish.icon;
+    }
+
+    public Dish GetCurrentOrder()
+    {
+        return dish;
     }
 
     public void EndOrder()

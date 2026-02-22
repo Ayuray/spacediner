@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class WaitingQueue
 {
+    private bool orderStarted = false;
+
     private List<Vector2> slots;
     private readonly List<GameObject> aliens = new();
- 
+
+    public static Vector2 FirstSlotPosition { get; private set; }
+
     public WaitingQueue(List<Vector2> slotPositions)
     {
         slots = slotPositions;
+        FirstSlotPosition = slots[0];
     }
 
     public static event Action OnOrderStart;
@@ -27,23 +32,61 @@ public class WaitingQueue
         return true;
     }
 
+    public bool TryRemoveQueue()
+    {
+        if (alienCount > 0)
+        {
+            GameObject front = aliens[0];
+            aliens.RemoveAt(0);
+
+            // remove alien from rightmost position
+            var mover = front.GetComponent<QueueAlienLerpMover>();
+            if (mover == null) mover = front.AddComponent<QueueAlienLerpMover>();
+
+            Vector2 exitPos = slots[0] + new Vector2(150f, 0f);
+            mover.ExitTo(exitPos);
+
+            //UpdatePositions();
+            orderStarted = false;
+            return true;
+        }
+        return false;
+    }
+
     private void UpdatePositions()
     {
-        RectTransform rt = aliens[0].GetComponent<RectTransform>();
+        if (alienCount == 0) return;
 
-        for (int i = 0; i < aliens.Count; i++)
+        for (int i = 0; i < alienCount; i++)
         {
-            rt = aliens[i].GetComponent<RectTransform>();
-            if(rt != null)
+            var go = aliens[i];
+            if (go == null)
             {
-                
-                rt.anchoredPosition = slots[i];
+                if (go == aliens[0])
+                {
+                    orderStarted = false;
+                }
+                continue;
             }
-        }
 
-        if (rt.anchoredPosition == slots[0])
-        {
-            OnOrderStart?.Invoke();
+            var mover = go.GetComponent<QueueAlienLerpMover>();
+            if (mover == null)
+                mover = go.AddComponent<QueueAlienLerpMover>();
+
+            if (i == 0)
+            {
+                if (!orderStarted)
+                {
+                    OnOrderStart?.Invoke();
+                    orderStarted = true;
+                }
+
+                mover.MoveTo(slots[i]);
+            }
+            else
+            {
+                mover.MoveTo(slots[i]);
+            }
         }
     }
 }
