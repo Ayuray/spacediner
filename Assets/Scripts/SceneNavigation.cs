@@ -7,12 +7,12 @@ public class SceneNavigation : MonoBehaviour
     public static event Action<int> OnGameStart;
     public void ToVolume()
     {
-        SceneManager.LoadScene(2, LoadSceneMode.Single);
+        SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 
     public void GameStart()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
         OnGameStart?.Invoke(1);
     }
 
@@ -23,6 +23,6 @@ public class SceneNavigation : MonoBehaviour
 
     public void ToMainMenu()
     {
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 }
