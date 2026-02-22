@@ -204,6 +204,7 @@ public class InventoryController : MonoBehaviour
 
     public void SendIt()
     {
+        int score = 0;
         foreach (Transform child in mainItemGrid.transform)
         {
             if (!child.CompareTag("Highlighter"))
@@ -211,9 +212,11 @@ public class InventoryController : MonoBehaviour
                 Debug.Log(child.gameObject.name);
                 Destroy(child.gameObject);
 
+                score++;
             }
         }
 
+        text.text = "Score: " + (score * 10);
         dishSystem.EndOrder();
     }
 }
