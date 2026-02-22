@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Martian Grey Matter
   m_EditorClassIdentifier: Assembly-CSharp::Dish
   dishName: Martian Grey Matter
-  icon: {fileID: 21300000, guid: 99a512d3abb0ec044825d36e1e76ca4f, type: 3}
+  icon: {fileID: 21300000, guid: ff0cfb8a702e8ab45b6c2c4283ec4655, type: 3}
   pickWeight: 1
   requirements:
   - cell: {x: 0, y: 0}

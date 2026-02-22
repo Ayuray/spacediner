@@ -204,6 +204,7 @@ public class InventoryController : MonoBehaviour
 
     public void SendIt()
     {
+        Debug.Log("go");
         int score = 0;
         foreach (Transform child in mainItemGrid.transform)
         {

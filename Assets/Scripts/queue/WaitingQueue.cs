@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WaitingQueue
 {
+    private bool orderStarted = false;
+
     private List<Vector2> slots;
     private readonly List<GameObject> aliens = new();
 
@@ -44,7 +46,8 @@ public class WaitingQueue
             Vector2 exitPos = slots[0] + new Vector2(150f, 0f);
             mover.ExitTo(exitPos);
 
-            UpdatePositions();
+            //UpdatePositions();
+            orderStarted = false;
             return true;
         }
         return false;
@@ -57,21 +60,33 @@ public class WaitingQueue
         for (int i = 0; i < alienCount; i++)
         {
             var go = aliens[i];
-            if (go == null) continue;
+            if (go == null)
+            {
+                if (go == aliens[0])
+                {
+                    orderStarted = false;
+                }
+                continue;
+            }
 
             var mover = go.GetComponent<QueueAlienLerpMover>();
             if (mover == null)
                 mover = go.AddComponent<QueueAlienLerpMover>();
 
-            if (i == 0) 
+            if (i == 0)
             {
-                mover.OnMoveFinished += () =>
+                if (!orderStarted)
                 {
                     OnOrderStart?.Invoke();
-                };
-            }
+                    orderStarted = true;
+                }
 
-            mover.MoveTo(slots[i]);
+                mover.MoveTo(slots[i]);
+            }
+            else
+            {
+                mover.MoveTo(slots[i]);
+            }
         }
     }
 }

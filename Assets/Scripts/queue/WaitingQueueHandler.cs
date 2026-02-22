@@ -41,7 +41,7 @@ public class WaitingQueueHandler : MonoBehaviour
         List<Vector2> slotPositions = new List<Vector2>();
         for (int i = 0; i < queueSize; i++)
         {
-            slotPositions.Add(rightmostPosition + (Vector2.left * i * distanceRight) + (Vector2.up * /*i **/ distanceUp));
+            slotPositions.Add(rightmostPosition + (Vector2.left * i * distanceRight) + (Vector2.up * i * distanceUp));
         }
 
         queue = new WaitingQueue(slotPositions);

@@ -22,10 +22,10 @@ public class DishSystem : MonoBehaviour
     private void Start()
     {
         orderReference.SetActive(false);
-        StartOrder();
     }
     public void StartOrder()
     {
+        Debug.Log("order");
         Dish dish = GetComponent<DishGenerator>().GenerateDish();
         orderReference.SetActive(true);
         orderReference.GetComponent<Image>().sprite = dish.icon;
