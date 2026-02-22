@@ -96,7 +96,7 @@ public class InventoryController : MonoBehaviour
         int selectedItemID = UnityEngine.Random.Range(0, items.Count);
         inventoryItem.SetItem(items[selectedItemID]);
 
-        gridToInsert.PlaceItem(inventoryItem, 1, 1);
+        gridToInsert.PlaceItem(inventoryItem, 2, 2);
     }
 
     private void RotateItem()
@@ -216,7 +216,7 @@ public class InventoryController : MonoBehaviour
             }
         }
 
-        text.text = "SCORE: " + (score * 10);
+        text.text = "Score: " + (score * 10);
         dishSystem.EndOrder();
     }
 }
