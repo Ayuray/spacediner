@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +11,8 @@ public class WaitingQueue
     {
         slots = slotPositions;
     }
+
+    public static event Action OnOrderStart;
 
     public int capacity => slots.Count;
     public int alienCount => aliens.Count;
@@ -27,14 +29,21 @@ public class WaitingQueue
 
     private void UpdatePositions()
     {
+        RectTransform rt = aliens[0].GetComponent<RectTransform>();
+
         for (int i = 0; i < aliens.Count; i++)
         {
-            var rt = aliens[i].GetComponent<RectTransform>();
+            rt = aliens[i].GetComponent<RectTransform>();
             if(rt != null)
             {
-                rt.anchoredPosition = slots[i];
                 
+                rt.anchoredPosition = slots[i];
             }
+        }
+
+        if (rt.anchoredPosition == slots[0])
+        {
+            OnOrderStart?.Invoke();
         }
     }
 }
