@@ -1,6 +1,6 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class InventoryController : MonoBehaviour
@@ -35,6 +35,9 @@ public class InventoryController : MonoBehaviour
     [SerializeField] List<ItemData> items;
     [SerializeField] GameObject itemPrefab;
     [SerializeField] Transform canvasTransform;
+    [SerializeField] GameObject mainItemGrid;
+    [SerializeField] DishSystem dishSystem;
+    [SerializeField] Text text;
 
     private void Awake()
     {
@@ -74,6 +77,26 @@ public class InventoryController : MonoBehaviour
         {
             PickOrPlaceItem();
         }
+    }
+
+    public void ReplaceRandomItem(ItemGrid gridToInsert)
+    {
+        foreach (Transform child in gridToInsert.transform)
+        {
+            if (!child.CompareTag("Highlighter"))
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        InventoryItem inventoryItem = Instantiate(itemPrefab).GetComponent<InventoryItem>();
+
+        inventoryItem.GetComponent<RectTransform>().SetParent(canvasTransform);
+
+        int selectedItemID = UnityEngine.Random.Range(0, items.Count);
+        inventoryItem.SetItem(items[selectedItemID]);
+
+        gridToInsert.PlaceItem(inventoryItem, 2, 2);
     }
 
     private void RotateItem()
@@ -135,6 +158,7 @@ public class InventoryController : MonoBehaviour
             if (selectedItem != null)
             {
                 rectTransform = selectedItem.GetComponent<RectTransform>();
+                selectedItem.transform.SetParent(canvasTransform);
                 selectedItem.transform.SetAsLastSibling();
             }
         }
@@ -150,6 +174,7 @@ public class InventoryController : MonoBehaviour
                     selectedItem = overlapItem;
                     overlapItem = null;
                     rectTransform = selectedItem.GetComponent<RectTransform>();
+                    selectedItem.transform.SetParent(selectedItemGrid.transform);
                     selectedItem.transform.SetAsLastSibling();
                 }
             }
@@ -175,5 +200,20 @@ public class InventoryController : MonoBehaviour
         {
             rectTransform.position = mousePosition.ReadValue<Vector2>();
         }
+    }
+
+    public void SendIt()
+    {
+        foreach (Transform child in mainItemGrid.transform)
+        {
+            if (!child.CompareTag("Highlighter"))
+            {
+                Debug.Log(child.gameObject.name);
+                Destroy(child.gameObject);
+
+            }
+        }
+
+        dishSystem.EndOrder();
     }
 }
