@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,12 +16,11 @@ public class WaitingQueue
     public int alienCount => aliens.Count;
     public bool queueFull => alienCount >= capacity;
 
-    public bool tryEnqueue(GameObject alienGO)
+    public bool TryAddQueue(GameObject alienGO)
     {
         if (queueFull || alienGO == null) return false;
 
         aliens.Add(alienGO);
-        Debug.Log("Enqueued new Alien");
         UpdatePositions();
         return true;
     }
@@ -33,6 +33,7 @@ public class WaitingQueue
             if(rt != null)
             {
                 rt.anchoredPosition = slots[i];
+                
             }
         }
     }
