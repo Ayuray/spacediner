@@ -4,8 +4,8 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RawImage))]
 public class UIScrollTexture : MonoBehaviour
 {
-    public float scrollSpeedX = 0.5f;
-    public float scrollSpeedY = 0.0f;
+    public float scrollSpeedX = 0.0f;
+    public float scrollSpeedY = 0.5f;
     
     private RawImage rawImg;
 
