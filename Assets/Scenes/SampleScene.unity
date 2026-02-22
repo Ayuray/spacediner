@@ -376,7 +376,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 142, y: 294}
-  m_SizeDelta: {x: 182.1134, y: 41.0567}
+  m_SizeDelta: {x: 117.6, y: 41.0567}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406891115
 MonoBehaviour:
@@ -405,13 +405,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Score\t"
+  m_Text: "SCORE\t"
 --- !u!222 &406891116
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -639,10 +639,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Send It
+  m_text: SEND IT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1489,7 +1489,7 @@ MonoBehaviour:
   items:
   - {fileID: 11400000, guid: 97fe2010ec1e675439e47cf3c210065d, type: 2}
   - {fileID: 11400000, guid: b08e94f0a6f25764bbbb76ccab910f20, type: 2}
-  itemPrefab: {fileID: 6218328334602525631, guid: 801594a490b81b94486a2694e45514c7, type: 3}
+  itemPrefab: {fileID: 6218328334602525631, guid: ab6ae973e3390aa4c87d3c738c691d83, type: 3}
   canvasTransform: {fileID: 1688475111}
   mainItemGrid: {fileID: 2115357587}
   dishSystem: {fileID: 1255611528}
@@ -1726,8 +1726,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 293, y: -196}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 247, y: -198}
+  m_SizeDelta: {x: 90, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1935842503
 MonoBehaviour:
