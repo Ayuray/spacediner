@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &218253992587047825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7354344666524713410}
+  - component: {fileID: 7162702291155208846}
+  m_Layer: 0
+  m_Name: FMOD_SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7354344666524713410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218253992587047825}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1039.7839, y: 806.91693, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7162702291155208846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218253992587047825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675369e986030cf47ac1adb233b2f04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SFXHandler
+  recipePopUp:
+    Guid:
+      Data1: 1891817592
+      Data2: 1208844697
+      Data3: 2095266747
+      Data4: -1097602978
+    Path: event:/UI/RecipePopUp
+  newCustomer:
+    Guid:
+      Data1: 887313274
+      Data2: 1339377144
+      Data3: 1498136467
+      Data4: 788040328
+    Path: event:/FLY/NewCustomer
+  pointGet:
+    Guid:
+      Data1: -902177214
+      Data2: 1151198489
+      Data3: 1853542295
+      Data4: 1315926010
+    Path: event:/UI/PointGet
+  pointLoose:
+    Guid:
+      Data1: 1075946454
+      Data2: 1127978488
+      Data3: -2067855991
+      Data4: -52656950
+    Path: event:/UI/PointDiscard
+  selectChoppingBoard:
+    Guid:
+      Data1: -243239196
+      Data2: 1324066582
+      Data3: -1584168311
+      Data4: -112965634
+    Path: event:/UI/SelectChoppingBoard
+  select:
+    Guid:
+      Data1: -675964834
+      Data2: 1086343286
+      Data3: 1221576837
+      Data4: -980344057
+    Path: event:/UI/Menu/Select
+  confirm:
+    Guid:
+      Data1: -1597253859
+      Data2: 1201193256
+      Data3: -1007599437
+      Data4: 583664276
+    Path: event:/UI/Menu/Confirm
+  back:
+    Guid:
+      Data1: -1643045046
+      Data2: 1190275402
+      Data3: 1403100086
+      Data4: -512242012
+    Path: event:/UI/Menu/Back
+  plateDone:
+    Guid:
+      Data1: -152168444
+      Data2: 1124575332
+      Data3: -535165819
+      Data4: 1452606846
+    Path: event:/UI/DishComplete
+  pickUpItem:
+    Guid:
+      Data1: 1945481380
+      Data2: 1290916559
+      Data3: 1465536404
+      Data4: -962461022
+    Path: event:/FLY/PickUp
+  placingItem:
+    Guid:
+      Data1: -611457665
+      Data2: 1077267240
+      Data3: -1926844520
+      Data4: 1285684170
+    Path: event:/FLY/Placing
+  rotateItem:
+    Guid:
+      Data1: 707228165
+      Data2: 1079667846
+      Data3: -1926764635
+      Data4: -1224643585
+    Path: event:/FLY/Rotate
+  dogBark:
+    Guid:
+      Data1: 714196185
+      Data2: 1289981061
+      Data3: -1211504492
+      Data4: 840879028
+    Path: event:/FLY/DogBark

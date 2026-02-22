@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
@@ -13,12 +14,25 @@ public class SFXHandler : MonoBehaviour
     [SerializeField] private EventReference select;
     [SerializeField] private EventReference confirm;
     [SerializeField] private EventReference back;
+    [SerializeField] private EventReference plateDone;
     [Header("Item")]
     [SerializeField] private EventReference pickUpItem;
     [SerializeField] private EventReference placingItem;
     [SerializeField] private EventReference rotateItem;
     [SerializeField] private EventReference dogBark;
 
+    private void OnEnable()
+    {
+        InventoryController.OnItemRotate += OnRotateItem;
+        InventoryController.OnItemPickUp += OnItemPickUp;
+        InventoryController.OnItemPlace += OnPlacingItem;
+    }
+    private void OnDisable()
+    {
+        InventoryController.OnItemRotate -= OnRotateItem;
+        InventoryController.OnItemPickUp -= OnItemPickUp;
+        InventoryController.OnItemPlace -= OnPlacingItem;
+    }
 
     private void OnMenuPopUp()
     {
@@ -45,17 +59,17 @@ public class SFXHandler : MonoBehaviour
         RuntimeManager.PlayOneShot(selectChoppingBoard);
     }
 
-    private void OnSelect()
+    public void OnSelect()
     {
         RuntimeManager.PlayOneShot(select);
     }
 
-    private void OnConfirm()
+    public void OnConfirm()
     {
         RuntimeManager.PlayOneShot(confirm);
     }
 
-    private void OnBack()
+    public void OnBack()
     {
         RuntimeManager.PlayOneShot(back);
     }
@@ -78,5 +92,10 @@ public class SFXHandler : MonoBehaviour
     private void OnDogBark()
     {
         RuntimeManager.PlayOneShot(dogBark);
+    }
+
+    public void OnPlateDone()
+    {
+        RuntimeManager.PlayOneShot(plateDone);
     }
 }

@@ -4,27 +4,38 @@ using UnityEngine.UI;
 
 public class AudioVolume : MonoBehaviour
 {
-        /*[SerializeField] private string busPath = "bus:/Master"; // The path to your FMOD bus
-        private FMOD.Studio.Bus targetBus;
-        private Slider slider;
+        [SerializeField] private string busPathSFX = "bus:/SFX";
+        [SerializeField] private string busPathMU = "bus:/MU";
+        private FMOD.Studio.Bus SFXBus, MUBus;
+        [SerializeField] private Slider sliderSFX, sliderMU;
 
         void Start()
         {
-            slider = GetComponent<Slider>();
+            //sliderSFX = GetComponent<Slider>();
+            //sliderMU = GetComponent<Slider>();
         
             // Locate the bus in the FMOD system
-            targetBus = FMODUnity.RuntimeManager.GetBus(busPath);
+            SFXBus = FMODUnity.RuntimeManager.GetBus(busPathSFX);
+            MUBus = FMODUnity.RuntimeManager.GetBus(busPathMU);
 
             // Set the slider's current value to match the bus volume on start
-            targetBus.getVolume(out float currentVolume);
-            slider.value = currentVolume;
+            SFXBus.getVolume(out float currentVolumeSFX);
+            MUBus.getVolume(out float currentVolumeMU);
+            sliderSFX.value = currentVolumeSFX;
+            sliderMU.value = currentVolumeMU;
 
             // Add a listener to handle value changes
-            slider.onValueChanged.AddListener(SetBusVolume);
+            sliderSFX.onValueChanged.AddListener(SetBusVolumeSFX);
+            sliderMU.onValueChanged.AddListener(SetBusVolumeMU);
         }
 
-        public void SetBusVolume(float volume)
+        public void SetBusVolumeSFX(float volume)
         {
-            targetBus.setVolume(volume);
-        }*/
+            SFXBus.setVolume(volume);
+        }
+
+        public void SetBusVolumeMU(float volume)
+        {
+            MUBus.setVolume(volume);
+        }
 }

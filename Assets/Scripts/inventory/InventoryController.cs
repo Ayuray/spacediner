@@ -2,10 +2,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
 
 public class InventoryController : MonoBehaviour
 {
     [HideInInspector] private ItemGrid selectedItemGrid;
+
+    public static event Action OnItemPickUp;
+    public static event Action OnItemPlace;
+    public static event Action OnItemRotate;
 
     public ItemGrid SelectedItemGrid
     {
@@ -104,6 +109,7 @@ public class InventoryController : MonoBehaviour
         if (selectedItem == null) { return; }
 
         selectedItem.Rotate();
+        OnItemRotate?.Invoke();
         oldPosition = new Vector2Int(0, 0);
     }
 
@@ -160,6 +166,7 @@ public class InventoryController : MonoBehaviour
                 rectTransform = selectedItem.GetComponent<RectTransform>();
                 selectedItem.transform.SetParent(canvasTransform);
                 selectedItem.transform.SetAsLastSibling();
+                OnItemPickUp?.Invoke();
             }
         }
         else
@@ -176,6 +183,7 @@ public class InventoryController : MonoBehaviour
                     rectTransform = selectedItem.GetComponent<RectTransform>();
                     selectedItem.transform.SetParent(selectedItemGrid.transform);
                     selectedItem.transform.SetAsLastSibling();
+                    OnItemPlace.Invoke();
                 }
             }
         }

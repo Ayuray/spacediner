@@ -10,16 +10,32 @@ public class MusicHandler : MonoBehaviour
     [SerializeField] private EventReference music;
     private EventInstance _musicInstance;
     private PARAMETER_ID _intensityID, _gameplayID;
-        
+    
+
+    private void OnEnable()
+    {
+        SceneNavigation.OnGameStart += OnGameplayChange;
+    }
+
+    private void OnDisable()
+    {
+        SceneNavigation.OnGameStart -= OnGameplayChange;
+    }
+
     private void Start()
     {
-        _musicInstance = RuntimeManager.CreateInstance(music);
-        _musicInstance.getDescription(out var musicDescription);
-        musicDescription.getParameterDescriptionByName("intensity", out var intensityDescription);
-        musicDescription.getParameterDescriptionByName("gameplay", out var gameplayDescription);
-        _intensityID = intensityDescription.id;
-        _gameplayID = gameplayDescription.id;
-        _musicInstance.start();
+        EventDescription eventDesc = RuntimeManager.GetEventDescription("event:/MU/music");
+        eventDesc.getInstanceCount(out int count);
+        if (count == 0)
+        {
+            _musicInstance = RuntimeManager.CreateInstance(music);
+            _musicInstance.getDescription(out var musicDescription);
+            musicDescription.getParameterDescriptionByName("intensity", out var intensityDescription);
+            musicDescription.getParameterDescriptionByName("gameplay", out var gameplayDescription);
+            _intensityID = intensityDescription.id;
+            _gameplayID = gameplayDescription.id;
+            _musicInstance.start();
+        }
     }
 
     private void CalculateIntensity(int amountOfCustomers)
@@ -29,8 +45,9 @@ public class MusicHandler : MonoBehaviour
      _musicInstance.setParameterByID(_intensityID, intensity);
     }
     
-    private void OnGameplayChange(float gameplay)
+    private void OnGameplayChange(int gameplay)
     {
+        Debug.Log("OnGameplayChange");
         _musicInstance.setParameterByID(_gameplayID, gameplay);
     }
 

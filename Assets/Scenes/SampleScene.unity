@@ -129,6 +129,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4369422204660863804, guid: a67899e1dca8a14488c456d84ab464be, type: 3}
   m_PrefabInstance: {fileID: 1312571736}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &278056958 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7162702291155208846, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+  m_PrefabInstance: {fileID: 8818555496359110689}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818555496359110690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675369e986030cf47ac1adb233b2f04d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SFXHandler
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +150,8 @@ GameObject:
   m_Component:
   - component: {fileID: 330585546}
   - component: {fileID: 330585545}
-  - component: {fileID: 330585544}
   - component: {fileID: 330585547}
+  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -148,14 +159,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &330585544
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
 --- !u!20 &330585545
 Camera:
   m_ObjectHideFlags: 0
@@ -266,6 +269,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &330585548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &330638505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,6 +1978,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 278056958}
+        m_TargetAssemblyTypeName: SFXHandler, Assembly-CSharp
+        m_MethodName: OnPlateDone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1935842504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,6 +2135,160 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 801906cc0cee47b43af4263bd2e4384f, type: 3}
+--- !u!1001 &8818555496359110689
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 218253992587047825, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_Name
+      value: FMOD_SFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1039.7839
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 806.91693
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354344666524713410, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 218253992587047825, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8818555496359110692}
+    - targetCorrespondingSourceObject: {fileID: 218253992587047825, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8818555496359110691}
+    - targetCorrespondingSourceObject: {fileID: 218253992587047825, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8818555496359110693}
+  m_SourcePrefab: {fileID: 100100000, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+--- !u!1 &8818555496359110690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 218253992587047825, guid: d4ea2ef8aab2da84f96c8d2104e8c0b1, type: 3}
+  m_PrefabInstance: {fileID: 8818555496359110689}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8818555496359110691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818555496359110690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 150918833
+      Data2: 1313147551
+      Data3: 1071295389
+      Data4: 1257470440
+    Path: event:/BG/Conveyor
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8818555496359110692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818555496359110690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -213864928
+      Data2: 1226830060
+      Data3: 999666609
+      Data4: -1412283149
+    Path: event:/BG/GuestBackground
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8818555496359110693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8818555496359110690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioParameterTrigger
+  CollisionTag: 
+  Emitters:
+  - Target: {fileID: 8818555496359110691}
+    Params: []
+  - Target: {fileID: 8818555496359110692}
+    Params:
+    - Name: intensity
+      Value: 1
+  TriggerEvent: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2118,3 +2301,4 @@ SceneRoots:
   - {fileID: 1666980969}
   - {fileID: 1255611527}
   - {fileID: 1394676333}
+  - {fileID: 8818555496359110689}

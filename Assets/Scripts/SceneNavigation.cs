@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class SceneNavigation : MonoBehaviour
 {
+    public static event Action<int> OnGameStart;
     public void ToVolume()
     {
         SceneManager.LoadScene(2, LoadSceneMode.Single);
@@ -11,6 +13,7 @@ public class SceneNavigation : MonoBehaviour
     public void GameStart()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
+        OnGameStart?.Invoke(1);
     }
 
     public void GameQuit()
