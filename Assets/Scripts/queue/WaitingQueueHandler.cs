@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+Ôªøusing System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -53,7 +53,7 @@ public class WaitingQueueHandler : MonoBehaviour
         if (queue.queueFull) return;
         if (alienSprites == null || alienSprites.Count == 0) return;
 
-        // Zuf‰lligen Sprite w‰hlen
+        // Zuf√§lligen Sprite w√§hlen
         Sprite sprite = alienSprites[Random.Range(0, alienSprites.Count)];
 
         // Person-Image erzeugen
