@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEditor.ShaderGraph.Internal;
+using UnityEngine.Networking;
 
 public class InventoryController : MonoBehaviour
 {
@@ -37,6 +39,7 @@ public class InventoryController : MonoBehaviour
     [SerializeField] Transform canvasTransform;
     [SerializeField] GameObject mainItemGrid;
     [SerializeField] DishSystem dishSystem;
+    [SerializeField] DishGenerator dishList;
     [SerializeField] Text text;
 
     private void Awake()
@@ -204,17 +207,40 @@ public class InventoryController : MonoBehaviour
 
     public void SendIt()
     {
-        Debug.Log("go");
         int score = 0;
+
         foreach (Transform child in mainItemGrid.transform)
         {
+
             if (!child.CompareTag("Highlighter"))
             {
-                Debug.Log(child.gameObject.name);
+                //ItemData item = child.GetComponent<ItemData>();
+                //Dish dish = dishSystem.GetCurrentOrder();
+                //
+                //List<Dish> dishList = this.dishList.ReturnDishList();
+                //
+                //
+                //
+                //foreach (Dish dsh in dishList)
+                //{
+                //    if (dsh == dish)
+                //    {
+                //        foreach(CellRequirement ing in dsh.requirements)
+                //        {
+                //            score += ing.score;
+                //        }
+                //    }
+                //}
+
                 Destroy(child.gameObject);
 
                 score++;
             }
+        }
+
+        if (score == 0)
+        {
+            return;
         }
 
         text.text = "SCORE: " + (score * 10);

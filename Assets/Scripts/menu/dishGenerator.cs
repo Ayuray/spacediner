@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,5 +16,11 @@ public class DishGenerator : MonoBehaviour
         if (allDishes == null || allDishes.Count == 0) return null;
 
        return WeightedPicker.Pick(allDishes, x => x.pickWeight);
+    }
+
+    public List<Dish> ReturnDishList()
+    {
+        return allDishes;
+
     }
 }

@@ -55,6 +55,7 @@ public class WaitingQueueHandler : MonoBehaviour
     private void OnLeaveQueue()
     {
         queue.TryRemoveQueue();
+
     }
 
     private void Update()
