@@ -2,8 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using UnityEditor.ShaderGraph.Internal;
-using UnityEngine.Networking;
+//using UnityEditor.ShaderGraph.Internal;
+//using UnityEngine.Networking;
 using System;
 
 public class InventoryController : MonoBehaviour

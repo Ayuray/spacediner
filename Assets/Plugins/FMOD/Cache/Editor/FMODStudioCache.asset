@@ -452,7 +452,7 @@ MonoBehaviour:
   Path: ../../../Music/SpaceDiner/CDGJMusic/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639073788365595829
+  lastModified: 639077111263747936
   FileSizes:
   - Name: Desktop
     Value: 2268
@@ -526,7 +526,7 @@ MonoBehaviour:
   Path: ../../../Music/SpaceDiner/CDGJMusic/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639073788365540156
+  lastModified: 639077111263702844
   FileSizes:
   - Name: Desktop
     Value: 27681024
@@ -923,7 +923,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -3569181654026465434}
   cacheVersion: 131858
-  cacheTime: 639073788365595829
+  cacheTime: 639077111263747936
   SerializableEventsDict:
   - key: event:/UI/DishComplete
     index: 0
